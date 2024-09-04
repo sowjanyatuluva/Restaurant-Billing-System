@@ -27,7 +27,8 @@ This is a Python-based restaurant billing system that generates tax invoices for
      Date
      Table number
      Number of items ordered
-     Details of each item (name, price, quantity).
+     Details of each item (name, price, quantity)
+   
 5.After entering the details, it will generate the bill, print it to the console, and save it to billslip.txt and Record.txt.
 
 
