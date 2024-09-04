@@ -20,16 +20,16 @@ This is a Python-based restaurant billing system that generates tax invoices for
    ```bash
    git clone https://github.com/sowjanyatuluva/Restaurant-Billing-System.git
    cd restaurant-billing-system
-2. Ensure Python is installed on your machine.
-3. Run the Python script:
+ 2. Ensure Python is installed on your machine.
+ 3. Run the Python script:
  python billing_system.py
-4. The program will ask for:
+ 4. The program will ask for:
      Date
      Table number
      Number of items ordered
      Details of each item (name, price, quantity)
    
-5.After entering the details, it will generate the bill, print it to the console, and save it to billslip.txt and Record.txt.
+  5.After entering the details, it will generate the bill, print it to the console, and save it to billslip.txt and Record.txt.
 
 
 ## File Structure :
