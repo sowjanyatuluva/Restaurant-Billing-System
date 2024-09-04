@@ -1,0 +1,160 @@
+project codes: python
+
+Restaurant Billing System
+ 
+x=["ChickenBiryani     ","FishBiryani        ","MuttonBiryani      ","EggBiryani         ","PrawnBiryani       ",
+                         "ChickenManchurian  ","ChickenCurry       ","MuttonCurry        ","PrawnCurry         ","ChickenFry         "]
+y=["Chepatikurma       ","Vegetablepulao     ","ButterNaan         ","RumaalRoti         ","Paneer&parota      ","PaneerBiryani      ",
+                           "MushroomBiryani    ","PannerTikka        ","GobiManchurian     ","CheesyPizza        ",]
+pricenonveg=[300,350,400,250,310,200,220,360,370,280]
+priceveg= [100,150,152,120,130,200,220,180,110,160]
+print("  .................................................................")
+print("  |  NON VEG            |  price  |         VEG         |  price  |")
+print("  .................................................................")
+for i in range(0,10):
+      print("  |",x[i],"| ",pricenonveg[i],"/- |",y[i],"| ",priceveg[i],'/-',"|")
+print("  .................................................................")
+   
+   
+sum1 = 0  
+name = []
+price = []
+quantity = []
+total = []
+date=str(input("Enter date: "))
+table=int(input("Enter table number: "))
+itemno=int(input("Enter number of items ordered: "))
+print("\n")
+for i in range(0,itemno):
+    name.append(input("Enter item: "))
+    price.append(int(input("Enter price: ")))
+    quantity.append(int(input("enter quantity: ")))
+    total.append(price[i]*quantity[i])
+    print("total: ",total[i])
+    print("\n")
+
+with open("C:\\Users\\Bindu Sai Kottapally\\Documents\\billno.txt","r") as f:
+    data = f.read()
+    asc = ord(data)
+    b = asc-64
+    #print(b)
+with open("C:\\Users\\Bindu Sai Kottapally\\Documents\\billno.txt","w") as f:
+    asc = asc+1
+    c = chr(asc)
+    f.write(c)
+   
+print("------------------------------------------------------")
+print("------------------------------------------------------")
+print("\t     PRIME RESTAURANT")
+print("\t      Family Dinning")
+print("  Banjara Hills,Rd no-10, Hyderabad-500034")
+print("\t     Phone no-23867544")
+print("-----------------Tax Invoice--------------------------")
+print("Date: ",date,"    Bill No: ",b)
+print("Table No: ",table)
+print("------------------------------------------------------")
+print("Items\t\t\tQuantity\tPrice\tTotal")
+
+for i in range(0,itemno):
+    sum1 = sum1 + total[i]
+    print(name[i],"\t\t",quantity[i],"\t\t",price[i],"\t",total[i])
+print("------------------------------------------------------")
+print("\t\titem total: ",sum1)
+print("\t\ttax 7%%: ",sum1*0.07)
+print("\t\tGRAND TOTAL: ",sum1+sum1*0.07)
+print("------------------------------------------------------")
+print("\t Thank You :)")
+print("\t Visit Again.")
+print("------------------------------------------------------")
+
+
+file=open("billslip.txt","w")
+file.write("   -------------------------------------------------\n")
+file.write("   -------------------------------------------------\n")
+file.write("                 PRIME RESTAURANT\n")
+file.write("                  Family Dinning\n")
+file.write("      Banjara Hills,Rd no-10, Hyderabad-500034\n")
+file.write("                Phone no-23867544\n")
+file.write("   -------------------Tax Invoice-------------------\n")
+file.write("   Date: ")
+file.write(date)
+file.write("   ")
+file.write("   Bill No: ")
+file.write(str(b))
+file.write("\n   Table No: ")
+file.write(str(table))
+file.write("\n")
+file.write("   -------------------------------------------------\n")
+file.write("   Items            Quantity    Price    Total\n")
+
+for i in range(0,itemno):
+    sum1 = sum1 + total[i]
+    file.write("   ")
+    file.write(name[i])
+    file.write("        ")
+    file.write(str(quantity[i]))
+    file.write("        ")
+    file.write(str(price[i]))
+    file.write("    ")
+    file.write(str(total[i]))
+    file.write("\n")
+file.write("   -------------------------------------------------\n")
+file.write("               item total: ")
+file.write(str(sum1))
+file.write("\n")
+file.write("               tax 7%: ")
+file.write(str(sum1*0.07))
+file.write("\n")
+file.write("               GRAND TOTAL: ")
+file.write(str(sum1+sum1*0.07))
+file.write("\n")
+file.write("   -------------------------------------------------\n")
+file.write("            Thank You :)\n")
+file.write("            Visit Again.\n")
+file.write("   -------------------------------------------------")
+file.close()
+recfile=open("Record.txt","a")
+recfile.write("\n")
+recfile.write("   -------------------------------------------------\n")
+recfile.write("   -------------------------------------------------\n")
+recfile.write("                 PRIME RESTAURANT\n")
+recfile.write("                  Family Dinning\n")
+recfile.write("      Banjara Hills,Rd no-10, Hyderabad-500034\n")
+recfile.write("                Phone no-23867544\n")
+recfile.write("   -------------------Tax Invoice-------------------\n")
+recfile.write("   Date: ")
+recfile.write(date)
+recfile.write("   ")
+recfile.write("   Bill No: ")
+recfile.write(str(b))
+recfile.write("\n   Table No: ")
+recfile.write(str(table))
+recfile.write("\n")
+recfile.write("   -------------------------------------------------\n")
+recfile.write("   Items            Quantity    Price    Total\n")
+for i in range(0,itemno):
+    sum1 = sum1 + total[i]
+    recfile.write("   ")
+    recfile.write(name[i])
+    recfile.write("        ")
+    recfile.write(str(quantity[i]))
+    recfile.write("        ")
+    recfile.write(str(price[i]))
+    recfile.write("    ")
+    recfile.write(str(total[i]))
+    recfile.write("\n")
+recfile.write("   -------------------------------------------------\n")
+recfile.write("               item total: ")
+recfile.write(str(sum1))
+recfile.write("\n")
+recfile.write("               tax 7%: ")
+recfile.write(str(sum1*0.07))
+recfile.write("\n")
+recfile.write("               GRAND TOTAL: ")
+recfile.write(str(sum1+sum1*0.07))
+recfile.write("\n")
+recfile.write("   -------------------------------------------------\n")
+recfile.write("            Thank You :)\n")
+recfile.write("            Visit Again.\n")
+recfile.write("   -------------------------------------------------")
+recfile.close()
