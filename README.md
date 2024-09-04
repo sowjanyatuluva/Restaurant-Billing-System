@@ -18,7 +18,7 @@ This is a Python-based restaurant billing system that generates tax invoices for
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/restaurant-billing-system.git
+   git clone https://github.com/sowjanyatuluva/Restaurant-Billing-System.git
    cd restaurant-billing-system
 2. Ensure Python is installed on your machine.
 3. Run the Python script:
